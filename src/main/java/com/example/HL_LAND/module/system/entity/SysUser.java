@@ -18,7 +18,7 @@ public class SysUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Tương ứng với BIGSERIAL
-    private Long id;
+    private Long id; // Khóa chính tự tăng
 
     @Column(name = "username", length = 100, nullable = false, unique = true)
     private String username;
@@ -27,13 +27,13 @@ public class SysUser {
     private String password;
 
     @Column(name = "email", length = 150, unique = true)
-    private String email;
+    private String email; // Thư điện tử
 
     @Column(name = "phone", length = 20)
-    private String phone;
+    private String phone; // Số điện thoại
 
     @Column(name = "full_name", length = 200)
-    private String fullName;
+    private String fullName; // Họ và tên
 
     @Column(name = "role", length = 50, nullable = false)
     @Builder.Default
@@ -45,12 +45,12 @@ public class SysUser {
 
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
-    private LocalDateTime createdAt;
+    private LocalDateTime createdAt; // Thời điểm tạo
 
     @UpdateTimestamp
     @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
+    private LocalDateTime updatedAt; // Thời điểm cập nhật
 
     @Column(name = "created_by", length = 100)
-    private String createdBy;
+    private String createdBy; // Người tạo
 }
